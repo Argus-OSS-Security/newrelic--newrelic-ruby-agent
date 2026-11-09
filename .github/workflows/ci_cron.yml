@@ -1,14 +1,15 @@
 name: Scheduled Continuous Integration
 
-on:
-  push:
-    branches:
-      - main
-      - dev
-  schedule:
-    - cron: '0 9 * * *'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#       - dev
+#   schedule:
+#     - cron: '0 9 * * *'
+#   workflow_dispatch:
+# 
 permissions:
   contents: read
 

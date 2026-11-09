@@ -1,12 +1,13 @@
 name: Lambda Release
 
-on:
-  workflow_run:
-    workflows: ["Release"]
-    types:
-      - completed
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: ["Release"]
+#     types:
+#       - completed
+#   workflow_dispatch:
+# 
 jobs:
   release:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}

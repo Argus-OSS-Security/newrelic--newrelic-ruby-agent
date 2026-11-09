@@ -1,44 +1,45 @@
 name: Run Perfverse
 permissions:
   contents: read
-on:
-  workflow_dispatch:
-    inputs:
-      run_1:
-        description: "Git tag and env vars for runs. Format: \"git_tag:ENV_VAR_1=one;ENV_VAR_2=two\"\n 1st run"
-        required: true
-        type: string
-      run_2:
-        description: "2nd run"
-        required: false
-        type: string
-      run_3:
-        description: "3rd run"
-        required: false
-        type: string
-      run_4:
-        description: "4th run"
-        required: false
-        type: string
-      agent_test_agent_disabled:
-        description: "Test run with agent disabled?"
-        default: true
-        required: true
-        type: boolean
-      run_time:
-        description: "Run time"
-        default: 5m
-        required: true
-        type: string
-      iterations:
-        description: "Number of iterations to run"
-        default: 5
-        required: true
-        type: string
-      # maybe add a name for each run so its better on graph
-
-
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       run_1:
+#         description: "Git tag and env vars for runs. Format: \"git_tag:ENV_VAR_1=one;ENV_VAR_2=two\"\n 1st run"
+#         required: true
+#         type: string
+#       run_2:
+#         description: "2nd run"
+#         required: false
+#         type: string
+#       run_3:
+#         description: "3rd run"
+#         required: false
+#         type: string
+#       run_4:
+#         description: "4th run"
+#         required: false
+#         type: string
+#       agent_test_agent_disabled:
+#         description: "Test run with agent disabled?"
+#         default: true
+#         required: true
+#         type: boolean
+#       run_time:
+#         description: "Run time"
+#         default: 5m
+#         required: true
+#         type: string
+#       iterations:
+#         description: "Number of iterations to run"
+#         default: 5
+#         required: true
+#         type: string
+#       # maybe add a name for each run so its better on graph
+# 
+# 
+# 
 jobs:
   prep:
     runs-on: ubuntu-latest

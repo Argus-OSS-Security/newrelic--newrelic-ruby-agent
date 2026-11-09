@@ -1,10 +1,11 @@
 name: Add new issues to project
 
-on:
-  issues:
-    types:
-      - opened
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   issues:
+#     types:
+#       - opened
+# 
 jobs:
   add-to-project:
     name: Add issue to project

@@ -1,8 +1,9 @@
 name: PR Continuous Integration
-on:
-  pull_request:
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}  # Ensure that only one instance of this workflow is running per Pull Request
   cancel-in-progress: true  # Cancel any previous runs of this workflow

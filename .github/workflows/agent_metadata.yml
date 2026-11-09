@@ -3,50 +3,51 @@ name: Agent Metadata
 permissions:
   contents: read
 
-on:
-  # Allows manual triggering with parameters
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Version tag (needs to exactly match the GH tag for the release)"
-        required: true
-        type: string
-      agent-type:
-        description: "Agent type"
-        required: false
-        default: "NRRubyAgent"
-        type: string
-      use-cache:
-        description: "Use cache"
-        required: false
-        default: true
-        type: boolean
-
-  # Allows calling from another workflow
-  workflow_call:
-    inputs:
-      version:
-        description: "Version tag (needs to exactly match the GH tag for the release)"
-        required: true
-        type: string
-      agent-type:
-        description: "Agent type"
-        required: false
-        default: "NRRubyAgent"
-        type: string
-      use-cache:
-        description: "Use cache"
-        required: false
-        default: true
-        type: boolean
-    secrets:
-      FC_SYS_ID_CLIENT_ID:
-        required: true
-      FC_SYS_ID_PR_KEY:
-        required: true
-      AGENT_METADATA_ACTION_LICENSE_KEY:
-        required: false
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   # Allows manual triggering with parameters
+#   workflow_dispatch:
+#     inputs:
+#       version:
+#         description: "Version tag (needs to exactly match the GH tag for the release)"
+#         required: true
+#         type: string
+#       agent-type:
+#         description: "Agent type"
+#         required: false
+#         default: "NRRubyAgent"
+#         type: string
+#       use-cache:
+#         description: "Use cache"
+#         required: false
+#         default: true
+#         type: boolean
+# 
+#   # Allows calling from another workflow
+#   workflow_call:
+#     inputs:
+#       version:
+#         description: "Version tag (needs to exactly match the GH tag for the release)"
+#         required: true
+#         type: string
+#       agent-type:
+#         description: "Agent type"
+#         required: false
+#         default: "NRRubyAgent"
+#         type: string
+#       use-cache:
+#         description: "Use cache"
+#         required: false
+#         default: true
+#         type: boolean
+#     secrets:
+#       FC_SYS_ID_CLIENT_ID:
+#         required: true
+#       FC_SYS_ID_PR_KEY:
+#         required: true
+#       AGENT_METADATA_ACTION_LICENSE_KEY:
+#         required: false
+# 
 jobs:
   send-agent-metadata:
     uses: newrelic/newrelic-agent-init-container/.github/workflows/agent-metadata.yml@main

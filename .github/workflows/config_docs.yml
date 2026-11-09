@@ -1,12 +1,13 @@
 name: Update Config Docs
 
-on:
-  workflow_run:
-    workflows: ["Release"]
-    types:
-      - completed
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: ["Release"]
+#     types:
+#       - completed
+#   workflow_dispatch:
+# 
 env:
   BRANCH_NAME: ruby-config-updates
   DESTINATION_REPO: newrelic/docs-website

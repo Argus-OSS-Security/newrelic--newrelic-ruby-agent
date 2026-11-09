@@ -1,11 +1,12 @@
 name: Label community issues and pr
 
-on:
-  issues:
-    types: [opened]
-  pull_request_target:
-    types: [opened]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   issues:
+#     types: [opened]
+#   pull_request_target:
+#     types: [opened]
+# 
 permissions:
   issues: write
   pull-requests: write

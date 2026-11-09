@@ -1,11 +1,12 @@
 name: Generate Release Notes
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
+# 
 jobs:
   send-pull-requests:
     runs-on: ubuntu-latest
